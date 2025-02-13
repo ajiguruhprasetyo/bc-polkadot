@@ -73,7 +73,6 @@ fn exercise_four() {
     let array_data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     let slice_data = &array_data[1..6];
     println!("{:?}", slice_data);
-    assert_eq!(slice_data, [2, 3, 4, 5, 6]);
 }
 
 fn exercise_five() {
@@ -95,11 +94,11 @@ fn exercise_six() {
 
 #[cfg(test)]
 mod tests {
-    use super::*;
 
     #[test]
     fn handling_slice_array() {
+        let array_data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
         let slice_data = &array_data[1..7];
-        assert_eq!(exercise_four(), [2, 3, 4, 5, 6, 7]);
+        assert_eq!(slice_data, [2, 3, 4, 5, 6, 7]);
     }
 }

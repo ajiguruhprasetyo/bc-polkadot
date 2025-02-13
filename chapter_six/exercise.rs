@@ -52,12 +52,16 @@ fn string_uppercase(mut data: String) {
     println!("{}", data);
 }
 
-#[test]
-fn main() {
-    let mut durian = 100;
-    let avocado = &mut durian;
-    let kurma = &mut durian;
-    *avocado += 100;
-    *kurma += 1000;
-    assert_eq!(durian, 1200);
+#[cfg(test)]
+mod tests {
+
+    #[test]
+    fn borowing_test() {
+        let mut durian = 100;
+        let avocado = &mut durian;
+        *avocado += 100;
+        let kurma = &mut durian;
+        *kurma += 1000;
+        assert_eq!(durian, 1200);
+    }
 }
